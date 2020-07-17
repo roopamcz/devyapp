@@ -2,6 +2,8 @@ branch-defaults:
   default:
     environment: devyapp
     group_suffix: null
+  master:
+    environment: devyApp
 global:
   application_name: devyApp
   branch: null
