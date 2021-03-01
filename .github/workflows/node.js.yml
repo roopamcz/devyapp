@@ -46,4 +46,4 @@ jobs:
           git pull origin master
           npm install 
           npm run build
-          pm2 restart devyapp
+          pm2 restart --all
