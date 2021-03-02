@@ -45,6 +45,7 @@ jobs:
           cd ~/devyapp
           git pull origin master
           npm install 
+          npm run build
           pm2 restart all
           sudo service nginx restart
 
