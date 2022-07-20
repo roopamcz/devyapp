@@ -26,35 +26,35 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test --if-present
-  #   - name: Login to Heroku Container registry
-  #     env:
-  #       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-  #     run: heroku container:login
-  #   - name: Build and push
-  #     env: 
-  #       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-  #     run: heroku container:push -a devyapp web
-  #   - name: Release
-  #     env: 
-  #       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-  #     run: heroku container:release -a devyapp web
+    - name: Login to Heroku Container registry
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: heroku container:login
+    - name: Build and push
+      env: 
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: heroku container:push -a devyapp web
+    - name: Release
+      env: 
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: heroku container:release -a devyapp web
 
-  # deploy:
-  #   runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #   - name: SSH and deploy node app
-  #     uses: appleboy/ssh-action@master
-  #     with:
-  #       host: ${{ secrets.HOST }}
-  #       username: ${{ secrets.USERNAME }}
-  #       key: ${{ secrets.KEY }}
-  #       port: ${{ secrets.PORT }}
+    steps:
+    - name: SSH and deploy node app
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
         
-  #       script: |
-  #         cd ~/devyapp
-  #         git pull origin master
-  #         npm install --production
-  #         pm2 restart all
+        script: |
+          cd ~/devyapp
+          git pull origin master
+          npm install --production
+          pm2 restart all
         
 
