@@ -11,12 +11,11 @@ on:
       - completed
 
 env:
-  DEP_IS_SUCCESS: ${{ github.event.workflow_run.conclusion == 'success' }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: env.DEP_IS_SUCCESS == 'true'
+    if: github.event.workflow_run.conclusion == 'success'
     steps:
     - run: echo "it passed"
     # strategy:
