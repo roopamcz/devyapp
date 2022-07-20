@@ -14,6 +14,8 @@ jobs:
   on-success:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+    - run: echo "it passed"
     strategy:
       matrix:
         node-version: [10.x, 12.x, 14.x, 15.x]
