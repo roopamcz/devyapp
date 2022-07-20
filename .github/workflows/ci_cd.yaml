@@ -9,9 +9,7 @@ on:
     branches: [master]
     types:
       - completed
-
-env:
-
+      
 jobs:
   build:
     runs-on: ubuntu-latest
