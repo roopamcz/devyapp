@@ -10,8 +10,8 @@ on:
     types:
       - completed
 
-# concurrency:
-#   group: staging-${{ github.ref }}
+concurrency:
+  group: staging-${{ github.ref }}
   
 jobs:
   build:
