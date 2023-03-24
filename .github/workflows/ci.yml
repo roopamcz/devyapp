@@ -6,7 +6,7 @@ on:
     branches: [ master ]
 jobs:
   node:
-    runs-on: [ self-hosted, master ]
+    runs-on: self-hosted
     steps:
     - name: Checkout the code
       uses: actions/checkout@v1
