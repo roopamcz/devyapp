@@ -19,7 +19,6 @@ jobs:
         TARGET: "/home/ubuntu/"
     - run: pwd
     - run: sudo cp /home/ubuntu/Dockerfile ./
-    - run: sudo cp /home/ubuntu/master.env ./
     - run: ls
     - name: Run build
       run: |
