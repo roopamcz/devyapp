@@ -1,4 +1,4 @@
-FROM public.ecr.aws/h4m7c9h3/baseimages:node-16
+FROM node:latest
 WORKDIR /app
 COPY package*.json ./
 #COPY package-lock.json ./
