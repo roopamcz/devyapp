@@ -23,11 +23,11 @@ jobs:
     - run: ls
     - name: Run build
       run: |
-        sudo docker stop rexnet-master || true
-        sudo docker rm rexnet-master  || true
-        sudo docker rmi rexnet-master  || true
-        sudo docker build -t rexnet-master .
-        sudo docker run --name rexnet-master -d -p 80:80 rexnet-master    
+        sudo docker stop express-master || true
+        sudo docker rm express-master  || true
+        sudo docker rmi express-master  || true
+        sudo docker build -t express-master .
+        sudo docker run --name express-master -d -p 80:80 express-master    
             
             
             
