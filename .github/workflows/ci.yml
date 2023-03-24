@@ -1,12 +1,12 @@
 name: Push-to-EC2
 on:
   push:
-    branches: [ dev ]
+    branches: [ master ]
   pull_request:
-    branches: [ dev ]
+    branches: [ master ]
 jobs:
   node:
-    runs-on: [ self-hosted, development ]
+    runs-on: [ self-hosted, master ]
     steps:
     - name: Checkout the code
       uses: actions/checkout@v1
@@ -19,12 +19,19 @@ jobs:
         TARGET: "/home/ubuntu/"
     - run: pwd
     - run: sudo cp /home/ubuntu/Dockerfile ./
-    - run: sudo cp /home/ubuntu/dev.env ./
+    - run: sudo cp /home/ubuntu/master.env ./
     - run: ls
     - name: Run build
       run: |
-        sudo docker stop rexnet-dev || true
-        sudo docker rm rexnet-dev  || true
-        sudo docker rmi rexnet-dev  || true
-        sudo docker build -t rexnet-dev .
-        sudo docker run --name rexnet-dev -d -p 80:80 rexnet-dev 
+        sudo docker stop rexnet-master || true
+        sudo docker rm rexnet-master  || true
+        sudo docker rmi rexnet-master  || true
+        sudo docker build -t rexnet-master .
+        sudo docker run --name rexnet-master -d -p 80:80 rexnet-master    
+            
+            
+            
+            
+            
+            
+        
