@@ -14,7 +14,7 @@ var router = _express2.default.Router();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Hello World Folks' });
+  res.render('index', { title: 'Hello World PearlThoughts' });
 });
 
 exports.default = router;
