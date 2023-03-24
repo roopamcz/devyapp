@@ -26,11 +26,4 @@ jobs:
         sudo docker rm express-master  || true
         sudo docker rmi express-master  || true
         sudo docker build -t express-master .
-        sudo docker run --name express-master -d -p 80:80 express-master    
-            
-            
-            
-            
-            
-            
-        
+        sudo docker run --name express-master -d -p 80:80 express-master
