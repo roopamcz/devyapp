@@ -6,7 +6,7 @@ COPY package*.json ./
 COPY ./ ./
 # RUN npm add passport
 RUN npm install
-RUN npm run build
+# RUN npm run build
 #ENV NODE_OPTIONS=--max-old-space-size=2048
 CMD npm run start
 
